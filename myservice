@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: myservice
+labels:
+  app: cdab
+  product_id: aDVSV
+  env: dev
+  org_id: TSE
+slos:
+  - name: sfvdfv
+    description: sFvdv
+    sli:
+      events:
+        error_query: fvsbv
+        total_query: dbdab
+    alerting:
+      name: dfbdbd
+      labels:
+        category: Availability
+      annotations:
+        summary: dagbdab
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
