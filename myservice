@@ -1,0 +1,29 @@
+version: prometheus/v1
+service: myservice
+labels:
+  app: application name
+  product_id: skydeck
+  env: stage
+  org_id: TSE
+slos:
+  - name: requestsavailability
+    objective: '99'
+    description: Common SLO based on availability for HTTP request responses
+    sli:
+      events:
+        error_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice",code=~"(5..|429)"}[{{.window}}]))
+        total_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice"}[{{.window}}]))
+    alerting:
+      name: MyServiceHighErrorRate
+      labels:
+        category: Availability
+      annotations:
+        summary: High error rate on myservice requests responses
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
