@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: servce1
+labels:
+  product_id: prod1
+  env: stage
+  org_id: TSE
+slos:
+  - name: '70'
+    objective: 90
+    description: '80'
+    sli:
+      events:
+        error_query: wedwd
+        total_query: eded
+    alerting:
+      name: dede
+      labels:
+        category: Availability
+      annotations:
+        summary: eded
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
