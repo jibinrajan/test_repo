@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: serv122
+labels:
+  product_id: wd
+  env: stage
+  org_id: TSE
+slos:
+  - name: slo1
+    objective: 80
+    description: slo1desc
+    sli:
+      events:
+        error_query: eq1
+        total_query: tq1
+    alerting:
+      name: al1
+      labels:
+        category: Availability
+      annotations:
+        summary: alert2
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
