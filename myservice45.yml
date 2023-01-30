@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: myservice45
+labels:
+  product_id: testid
+  env: dev
+  org_id: TSE
+slos:
+  - name: test
+    objective: 97
+    description: test1
+    sli:
+      events:
+        error_query: xv
+        total_query: zddf
+    alerting:
+      name: advsv
+      labels:
+        category: Availability
+      annotations:
+        summary: dvsv
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
