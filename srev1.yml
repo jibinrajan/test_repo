@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: srev1
+labels:
+  product_id: prod2
+  env: stage
+  org_id: TSE
+slos:
+  - name: slo1
+    objective: 80
+    description: sloDesc1
+    sli:
+      events:
+        error_query: wed
+        total_query: dede
+    alerting:
+      name: dede
+      labels:
+        category: Availability
+      annotations:
+        summary: alertannot1
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
