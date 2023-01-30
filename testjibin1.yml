@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: testjibin1
+labels:
+  product_id: sjvbdj
+  env: stage
+  org_id: TSE
+slos:
+  - name: sbvkfdsjbv
+    objective: 99
+    description: sFbvjknb
+    sli:
+      events:
+        error_query: svdbdb
+        total_query: dfbdb
+    alerting:
+      name: dbdzgbn
+      labels:
+        category: Availability
+      annotations:
+        summary: dzbdzb
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
