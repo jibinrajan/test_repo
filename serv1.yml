@@ -1,7 +1,0 @@
-version: prometheus/v1
-service: serv1
-labels:
-  product_id: prod1
-  env: stage
-  org_id: TSE
-slos: []
