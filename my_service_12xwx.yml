@@ -1,0 +1,45 @@
+version: prometheus/v1
+service: my_service_12xwx
+labels:
+  product_id: prod1
+  env: stage
+  org_id: TSE
+slos:
+  - name: slo1Desc
+    objective: 90
+    description: slo1
+    sli:
+      events:
+        error_query: eq1
+        total_query: tq1
+    alerting:
+      name: alert1
+      labels:
+        category: Availability
+      annotations:
+        summary: alertannot1
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
+  - name: slo2
+    objective: 86
+    description: slo2Desc
+    sli:
+      events:
+        error_query: eq1
+        total_query: tq1
+    alerting:
+      name: alert1
+      labels:
+        category: Availability
+      annotations:
+        summary: aleannot1
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
