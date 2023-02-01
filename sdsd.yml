@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: sdsd
+labels:
+  product_id: edewd
+  env: stage
+  org_id: TSE
+slos:
+  - name: dede
+    objective: 90
+    description: eded
+    sli:
+      events:
+        error_query: eqcwe
+        total_query: tq1
+    alerting:
+      name: eded
+      labels:
+        category: Availability
+      annotations:
+        summary: eded
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
