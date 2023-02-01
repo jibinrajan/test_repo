@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: ededswsw
+labels:
+  product_id: eded
+  env: stage
+  org_id: TSE
+slos:
+  - name: eded
+    objective: 90
+    description: ded
+    sli:
+      events:
+        error_query: eded
+        total_query: eded
+    alerting:
+      name: eded
+      labels:
+        category: Latency
+      annotations:
+        summary: deded
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
