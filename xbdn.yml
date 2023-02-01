@@ -1,0 +1,7 @@
+version: prometheus/v1
+service: xbdn
+labels:
+  product_id: hncg
+  env: dev
+  org_id: TSE
+slos: []
