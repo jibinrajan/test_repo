@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: wdwd
+labels:
+  product_id: wdwd
+  env: stage
+  org_id: PP1
+slos:
+  - name: slo1
+    objective: 85
+    description: slo1Desc
+    sli:
+      events:
+        error_query: eq1
+        total_query: tq1
+    alerting:
+      name: sloAlert1
+      labels:
+        category: Availability
+      annotations:
+        summary: sloAlertAnnot1
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
