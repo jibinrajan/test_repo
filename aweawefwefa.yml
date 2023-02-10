@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: aweawefwefa
+labels:
+  product_id: awefweaf
+  env: dev
+  org_id: TSE
+slos:
+  - name: wefwaefawef
+    objective: 99
+    description: waefawef
+    sli:
+      events:
+        error_query: awefawef
+        total_query: weafwef
+    alerting:
+      name: awefwaef
+      labels:
+        category: Availability
+      annotations:
+        summary: waefawefwaef
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
