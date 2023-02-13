@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: ewkjnfberjhbferf
+labels:
+  product_id: erkjfbjhebrfjhberf
+  env: dev
+  org_id: TSE
+slos:
+  - name: erbfjhebrfjherbf
+    objective: 99
+    description: kjerhjfbejhfberf
+    sli:
+      events:
+        error_query: ermfbehjbrfhjerf
+        total_query: ejhrbfjhebhfhjerf
+    alerting:
+      name: erfmbejrhfbjherf
+      labels:
+        category: Availability
+      annotations:
+        summary: erfjkerjfbjerbf
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
