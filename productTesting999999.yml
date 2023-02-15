@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: productTesting999999
+labels:
+  product_id: productTesting999999
+  env: dev
+  org_id: Technology Services Engineering
+slos:
+  - name: productTesting999999
+    objective: 99
+    description: productTesting999999
+    sli:
+      events:
+        error_query: productTesting999999
+        total_query: productTesting999999
+    alerting:
+      name: productTesting999999
+      labels:
+        category: Availability
+      annotations:
+        summary: productTesting999999
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
