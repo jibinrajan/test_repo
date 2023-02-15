@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: prodtcTestingYamlllll444
+labels:
+  product_id: prodID
+  env: dev
+  org_id: Technology Services Engineering
+slos:
+  - name: slothwhdwv99
+    objective: 99
+    description: slo77777
+    sli:
+      events:
+        error_query: wkjfkjwnekfd
+        total_query: wkjefjwebfjwef
+    alerting:
+      name: wefjwjefbjwef
+      labels:
+        category: Availability
+      annotations:
+        summary: lkwefnknwefkj
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
