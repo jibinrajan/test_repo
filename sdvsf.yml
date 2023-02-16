@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: sdvsf
+labels:
+  product_id: dsfbzdb
+  env: dev
+  org_id: Technology Services Engineering
+slos:
+  - name: dzgb
+    objective: 66
+    description: zdgbzd
+    sli:
+      events:
+        error_query: sfbdzb
+        total_query: dzgbz
+    alerting:
+      name: dzgbfxn
+      labels:
+        category: Availability
+      annotations:
+        summary: dzgbzd
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
