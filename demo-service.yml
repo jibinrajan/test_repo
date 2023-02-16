@@ -1,0 +1,28 @@
+version: prometheus/v1
+service: demo-service
+labels:
+  product_id: prod_id
+  env: dev
+  org_id: Technology Services Engineering
+slos:
+  - name: demo-service-slo
+    objective: 99
+    description: 'SLO based on availability '
+    sli:
+      events:
+        error_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice",code=~"(5..|429)"}[{{.window}}]))
+        total_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice"}[{{.window}}]))
+    alerting:
+      name: MY ServiceHighErrorRate
+      labels:
+        category: Availability
+      annotations:
+        summary: High error rate on demo-service
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
