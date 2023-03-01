@@ -1,0 +1,28 @@
+version: prometheus/v1
+service: tets
+labels:
+  product_id: test
+  env: dev
+  org_id: Technology Services Engineering
+slos:
+  - name: test
+    objective: 98
+    description: test
+    sli:
+      events:
+        error_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice",code=~"(5..|429)"}[{{.window}}]))
+        total_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice"}[{{.window}}]))
+    alerting:
+      name: test
+      labels:
+        category: Availability
+      annotations:
+        summary: test
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
