@@ -1,0 +1,26 @@
+version: prometheus/v1
+service: testjibin
+labels:
+  product_id: test
+  env: dev
+  org_id: Technology Services Engineering
+slos:
+  - name: sss
+    objective: 55
+    description: dd
+    sli:
+      events:
+        error_query: test
+        total_query: test
+    alerting:
+      name: gtet
+      labels:
+        category: Availability
+      annotations:
+        summary: gete
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
