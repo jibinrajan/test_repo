@@ -1,0 +1,28 @@
+version: prometheus/v1
+service: djhsaoqdioewdmndwsujdw
+labels:
+  product_id: duwsdha
+  env: dev
+  org_id: Technology Services Engineering
+slos:
+  - name: saksqk
+    objective: 87
+    description: sklqjslq
+    sli:
+      events:
+        error_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice",code=~"(5..|429)"}[{{.window}}]))
+        total_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice"}[{{.window}}]))
+    alerting:
+      name: sq
+      labels:
+        category: Availability
+      annotations:
+        summary: wekljw
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
