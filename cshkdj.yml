@@ -1,0 +1,28 @@
+version: prometheus/v1
+service: cshkdj
+labels:
+  product_id: jkdhsd
+  env: dev
+  org_id: Technology Services Engineering
+slos:
+  - name: dsjhd
+    objective: 90.99
+    description: djkwhsd
+    sli:
+      events:
+        error_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice",code=~"(5..|429)"}[{{.window}}]))
+        total_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice"}[{{.window}}]))
+    alerting:
+      name: edjwh
+      labels:
+        category: Availability
+      annotations:
+        summary: jdwkdjhw
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
