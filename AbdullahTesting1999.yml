@@ -1,0 +1,28 @@
+version: prometheus/v1
+service: AbdullahTesting1999
+labels:
+  product_id: werferf
+  env: dev
+  org_id: Technology Services Engineering
+slos:
+  - name: erferferf
+    objective: 99
+    description: erferf
+    sli:
+      events:
+        error_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice",code=~"(5..|429)"}[{{.window}}]))
+        total_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice"}[{{.window}}]))
+    alerting:
+      name: erferfrf
+      labels:
+        category: Availability
+      annotations:
+        summary: referfre
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
