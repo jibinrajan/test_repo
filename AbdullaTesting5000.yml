@@ -1,0 +1,49 @@
+version: prometheus/v1
+service: AbdullaTesting5000
+labels:
+  product_id: AbdullaTesting5000
+  env: dev
+  org_id: Technology Services Engineering
+slos:
+  - name: AbdullaTesting5000
+    objective: 100
+    description: AbdullaTesting5000
+    sli:
+      events:
+        error_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice",code=~"(5..|429)"}[{{.window}}]))
+        total_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice"}[{{.window}}]))
+    alerting:
+      name: hello2
+      labels:
+        category: Availability
+      annotations:
+        summary: hello2
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
+  - name: Abdullah6000
+    objective: 99
+    description: Abdullah6000
+    sli:
+      events:
+        error_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice",code=~"(5..|429)"}[{{.window}}]))
+        total_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice"}[{{.window}}]))
+    alerting:
+      name: alert3
+      labels:
+        category: Latency
+      annotations:
+        summary: alert3
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
