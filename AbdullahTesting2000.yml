@@ -26,3 +26,24 @@ slos:
       ticket_alert:
         labels:
           severity: warning
+  - name: AbdullahTesting3000
+    objective: 100
+    description: AbdullahTesting3000
+    sli:
+      events:
+        error_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice",code=~"(5..|429)"}[{{.window}}]))
+        total_query: >-
+          sum(rate(http_request_duration_seconds_count{job="myservice"}[{{.window}}]))
+    alerting:
+      name: alert1
+      labels:
+        category: Latency
+      annotations:
+        summary: alert2
+      page_alert:
+        labels:
+          severity: critical
+      ticket_alert:
+        labels:
+          severity: warning
